@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fdf5e6; /* Màu kem */
+        }
+
+        .container {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            color: #8b4513; /* Màu chữ (nâu) */
+        }
+
+        button {
+            background-color: #8b4513; /* Màu nút (nâu) */
+            color: #fff; /* Màu chữ trắng */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #cake {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .birthday-message {
+            margin-top: 20px;
+            color: #333; /* Màu chữ đen */
+        }
+    </style>
+    <title>Happy Birthday</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Chúc mừng sinh nhật!</h1>
+        <img id="cake" src="https://duhocsunny.edu.vn/wp-content/uploads/2023/03/banh-kem-cute.jpg" alt="Birthday Cake">
+        <button id="playButton">Chơi nhạc</button>
+        <div class="birthday-message">
+            <h2>Chúc chị dâu có một ngày sinh nhật tràn ngập niềm vui và hạnh phúc!</h2>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = new Audio('./assets/css/Happy Birthday Song Remix - Happy Birthday To You Remix.mp4'); // Thay đổi tên file nhạc của bạn
+
+            const playButton = document.getElementById('playButton');
+
+            playButton.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    playButton.textContent = 'Dừng nhạc';
+                } else {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    playButton.textContent = 'Chơi nhạc';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
